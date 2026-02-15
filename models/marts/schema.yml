@@ -1,0 +1,140 @@
+version: 2
+
+models:
+
+  # ---------------------
+  # Dimensional Models
+  # ---------------------
+
+  - name: dim_customers
+    description: "Dimension table for customers with SCD2 handling and surrogate key"
+    columns:
+      - name: dim_customer_id
+        description: "Surrogate key for the customer"
+        tests:
+          - not_null
+          - unique
+      - name: customer_key
+        description: "Business key from source staging table"
+        tests:
+          - not_null
+      - name: full_name
+        description: "Customer full name, trimmed"
+        tests:
+          - not_null
+      - name: marital_status
+        description: "Marital status of the customer"
+      - name: gender
+        description: "Gender of the customer"
+      - name: email_address
+        description: "Email address of the customer, lowercased"
+      - name: annual_income
+        description: "Annual income of the customer"
+      - name: occupation
+        description: "Occupation of the customer"
+      - name: homeowner
+        description: "Indicator if the customer owns a home"
+      - name: valid_from
+        description: "Timestamp when this record became valid"
+        tests:
+          - not_null
+      - name: valid_to
+        description: "Timestamp when this record was closed (null if current)"
+      - name: is_current
+        description: "Indicator if this record is the current version (1=current, 0=closed)"
+        tests:
+          - not_null
+
+  # ---------------------
+  # Fact Models
+  # ---------------------
+
+  - name: fct_returns
+    description: "Fact table for returns including return date, quantity, territory, and product information"
+    columns:
+      - name: return_date
+        description: "Date of the return"
+        tests:
+          - not_null
+      - name: return_quantity
+        description: "Quantity of returned products"
+        tests:
+          - not_null
+      - name: region
+        description: "Region of the return"
+        tests:
+          - not_null
+      - name: country
+        description: "Country of the return"
+      - name: continent
+        description: "Continent of the return"
+      - name: product_sku     
+        description: "Product SKU"
+        tests:
+          - not_null
+      - name: product_name
+        description: "Name of the product"
+        tests:
+          - not_null
+      - name: model_name
+        description: "Product model name"
+      - name: product_description
+        description: "Product description"
+      - name: product_cost
+        description: "Cost of the product"
+      - name: product_price
+        description: "Selling price of the product"
+
+  - name: fct_sales
+    description: "Fact table for sales, joined with product, territory, subcategory, and category"
+    columns:
+      - name: order_date
+        description: "Date when the order was placed"
+        tests:
+          - not_null
+      - name: stock_date
+        description: "Date when the product was stocked"
+      - name: order_number
+        description: "Unique identifier of the order"
+      - name: customer_key
+        description: "Business key of the customer"
+        tests:
+          - not_null
+      - name: order_quantity
+        description: "Quantity of products ordered"
+      - name: product_sku
+        description: "Product SKU"
+        tests:
+          - not_null
+      - name: product_name
+        description: "Name of the product"
+        tests:
+          - not_null
+      - name: model_name
+        description: "Product model name"
+        tests:
+          - not_null
+      - name: product_description
+        description: "Product description"
+      - name: product_color
+        description: "Color of the product"
+      - name: product_size
+        description: "Size of the product"
+      - name: product_style
+        description: "Style of the product"
+      - name: product_cost
+        description: "Cost of the product"
+      - name: product_price
+        description: "Selling price of the product"
+      - name: region
+        description: "Region of the sale"
+        tests:
+          - not_null
+      - name: country
+        description: "Country of the sale"
+      - name: continent
+        description: "Continent of the sale"
+      - name: subcategory_name
+        description: "Subcategory of the product"
+      - name: category_name
+        description: "Category of the product"

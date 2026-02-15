@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: adventureworks_app
+    schema: raw    # Sənin source table-ların olduğu schema
+    tables:
+      - name: adventureworks_calendar_lookup
+      - name: adventureworks_territory_lookup
+      - name: adventureworks_customer_lookup
+      - name: adventureworks_sales_data_2022
+      - name: adventureworks_returns_data
+      - name: adventureworks_product_subcategories_lookup
+      - name: adventureworks_product_lookup
+      - name: adventureworks_product_categories_lookup

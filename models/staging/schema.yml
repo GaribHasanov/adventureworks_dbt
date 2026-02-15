@@ -1,0 +1,153 @@
+version: 2
+
+models:
+
+  # ---------------------
+  # Staging Models
+  # ---------------------
+
+  - name: stg_customers
+    description: "Cleaned customer data in the staging layer"
+    columns:
+      - name: customer_key
+        description: "Primary key of the customer"
+  #      tests:
+   #       - not_null
+    #      - unique
+      - name: full_name
+        description: "Customer's full_name, trimmed of spaces"
+        tests:
+          - not_null
+      - name: email_address
+        description: "Customer's email, converted to lowercase"
+
+  - name: stg_product_categories
+    description: "Cleaned product categories data from raw lookup table"
+    columns:
+      - name: product_category_key
+        description: "Primary key of the product category"
+        tests:
+          - not_null
+          - unique
+      - name: category_name
+        description: "Name of the product category, trimmed"
+        tests:
+          - not_null
+
+  - name: stg_product_subcategories
+    description: "Cleaned product subcategories data from raw lookup table"
+    columns:
+      - name: product_subcategory_key
+        description: "Primary key of the product subcategory"
+        tests:
+          - not_null
+          - unique
+      - name: product_category_key
+        description: "Foreign key to product category"
+        tests:
+          - not_null
+      - name: subcategory_name
+        description: "Name of the product subcategory, trimmed"
+        tests:
+          - not_null
+
+  - name: stg_product
+    description: "Cleaned product data from raw lookup table"
+    columns:
+      - name: product_key
+        description: "Primary key of the product"
+        tests:
+          - not_null
+          - unique
+      - name: product_sku
+        description: "Stock keeping unit identifier"
+        tests:
+          - not_null
+      - name: product_name
+        description: "Name of the product, trimmed"
+        tests:
+          - not_null
+      - name: model_name
+        description: "Model name of the product, trimmed"
+      - name: product_description
+        description: "Detailed description of the product, trimmed"
+      - name: product_color
+        description: "Color of the product, trimmed"
+      - name: product_size
+        description: "Size of the product, trimmed"
+      - name: product_style
+        description: "Style of the product, trimmed"
+      - name: product_cost
+        description: "Cost price of the product"
+      - name: product_price
+        description: "Selling price of the product"
+      - name: product_subcategory_key
+        description: "Foreign key to the product subcategory"
+        tests:
+          - not_null
+
+  - name: stg_returns
+    description: "Cleaned returns data from raw source table"
+    columns:
+      - name: return_date
+        description: "Date when the return occurred"
+        tests:
+          - not_null
+      - name: return_quantity
+        description: "Quantity of items returned"
+        tests:
+          - not_null
+      - name: territory_key
+        description: "Foreign key to the territory"
+        tests:
+          - not_null
+      - name: product_key
+        description: "Foreign key to the product"
+        tests:
+          - not_null
+
+  - name: stg_sales
+    description: "Cleaned sales data from raw 2022 sales source table"
+    columns:
+      - name: order_date
+        description: "Date when the order was placed"
+        tests:
+          - not_null
+      - name: stock_date
+        description: "Date when the product was stocked"
+        tests:
+          - not_null
+      - name: order_number
+        description: "Unique identifier for each order"
+        tests:
+          - not_null
+      - name: product_key
+        description: "Foreign key to the product"
+        tests:
+          - not_null
+      - name: territory_key
+        description: "Foreign key to the territory"
+        tests:
+          - not_null
+          
+
+  - name: stg_territory
+    description: "Cleaned territory lookup data from raw source table"
+    columns:
+      - name: territory_key
+        description: "Primary key of the territory"
+        tests:
+          - not_null
+          - unique
+      - name: region
+        description: "Region name, trimmed"
+        tests:
+          - not_null
+      - name: country
+        description: "Country name, trimmed"
+        tests:
+          - not_null
+      - name: continent
+        description: "Continent name, trimmed"
+        tests:
+          - not_null
