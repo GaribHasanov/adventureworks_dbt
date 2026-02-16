@@ -208,7 +208,6 @@ dbt docs serve
 
 ## 🚀 Future Improvements
 
-- Implement incremental models
 - Add dbt snapshots
 - Add CI/CD pipeline (GitHub Actions)
 - Add data quality monitoring
@@ -218,8 +217,8 @@ dbt docs serve
 
 ## 👤 Author
 
-Your Name  
-Data Engineer
+Garib Hasanov 
+Data & Analytics Engineer
 
 ---
 
