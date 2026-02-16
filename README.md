@@ -88,7 +88,7 @@ project/
 │   ├── load_to_adventureworks_territory_lookup.py
 │   └── .env  (not included in repo; contains Postgres credentials)
 │
-├── data/
+├── csv/
 │   ├── adventureworks_customer_lookup.csv
 │   ├── adventureworks_product_categories_lookup.csv
 │   ├── adventureworks_product_lookup.csv
