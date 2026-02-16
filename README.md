@@ -59,7 +59,7 @@ The Python scripts use a `.env` file to load PostgreSQL connection details (host
 
 **Important:** The `.env` file is **gitignored** for security reasons and is **not included in the repository**.  
 
-To run the scripts, create a `.env` file in the same folder as the scripts with the following variables:
+To run the scripts, create a .env file in the el_scripts/ folder (where the scripts are located) with the following variables:
 
 ```env
 DB_HOST=<your_postgres_host>
