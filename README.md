@@ -170,7 +170,14 @@ dbt test
 Run the Python script to load CSV files into PostgreSQL:
 
 ```bash
-python load_csv_to_postgres.py
+python load_to_adventureworks_calendar_lookup.py
+python load_to_adventureworks_customer_lookup.py
+python load_to_adventureworks_product_categories_lookup.py
+python load_to_adventureworks_product_lookup.py
+python load_to_adventureworks_product_subcategories_lookup.py
+python load_to_adventureworks_returns_data.py
+python load_to_adventureworks_sales_data_2022.py
+python load_to_adventureworks_territory_lookup.py
 ```
 
 ### 2️⃣ Run dbt models
