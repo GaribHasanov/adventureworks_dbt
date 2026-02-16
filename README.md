@@ -41,6 +41,11 @@ dbt Staging Models (`adventureworks` schema)
 ↓  
 dbt Mart Models (`adventureworks` schema)  
 
+The image below shows the dbt lineage diagram.  
+It visually represents how the mart and staging models are related to each other:
+
+<img width="1468" height="498" alt="image" src="https://github.com/user-attachments/assets/b12b7fec-a1aa-4166-b89f-f703db4c9849" />
+
 ---
 
 ## 🧰 Tech Stack
