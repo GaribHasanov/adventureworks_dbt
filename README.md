@@ -7,7 +7,7 @@ This project implements a modern Data Warehouse using the **AdventureWorks** dat
 The goal of the project is to transform raw source data into a structured, analytics-ready warehouse following modern data engineering best practices.
 
 This repository demonstrates:
-- Layered data modeling (Staging → Intermediate → Mart)
+- Layered data modeling (Staging → Mart)
 - dbt transformations
 - Testing & documentation
 - Version control with GitHub
