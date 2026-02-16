@@ -42,3 +42,8 @@ The project follows a modern ELT workflow:
 ---
 
 ## 📂 Project Structure
+models/
+├── staging/        # Source-aligned cleaned models
+├── marts/          # Fact and dimension tables
+└── schema.yml      # Tests and documentation
+
