@@ -21,8 +21,7 @@ The project follows a modern ELT workflow:
 
 1. Raw data loaded into the Data Warehouse
 2. dbt transforms raw data into staging models
-3. Intermediate transformations applied
-4. Final marts built for analytics
+3. Final marts built for analytics
 
 ### Layers:
 
@@ -33,11 +32,12 @@ The project follows a modern ELT workflow:
 
 ## 🧰 Tech Stack
 
+- Python
 - dbt
 - SQL
 - Git & GitHub
 - AdventureWorks dataset
-- (Your warehouse: Snowflake / BigQuery / PostgreSQL / etc.)
+- PostgreSQL
 
 ---
 
