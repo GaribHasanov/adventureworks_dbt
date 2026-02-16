@@ -217,7 +217,7 @@ dbt docs serve
 
 ## 👤 Author
 
-Garib Hasanov 
+Garib Hasanov  
 Data & Analytics Engineer
 
 ---
