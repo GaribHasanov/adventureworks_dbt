@@ -77,8 +77,16 @@ Replace the placeholders with your actual PostgreSQL credentials.
 
 ```
 project/
-├── python/
-│   └── load_csv_to_postgres.py
+├── el_scripts/
+│   ├── load_to_adventureworks_calendar_lookup.py
+│   ├── load_to_adventureworks_customer_lookup.py
+│   ├── load_to_adventureworks_product_categories_lookup.py
+│   ├── load_to_adventureworks_product_lookup.py
+│   ├── load_to_adventureworks_product_subcategories_lookup.py
+│   ├── load_to_adventureworks_returns_data.py
+│   ├── load_to_adventureworks_sales_data_2022.py
+│   ├── load_to_adventureworks_territory_lookup.py
+│   └── .env  (not included in repo; contains Postgres credentials)
 │
 ├── data/
 │   ├── adventureworks_customer_lookup.csv
@@ -107,6 +115,7 @@ project/
 │   │   └── schema.yml
 │
 └── dbt_project.yml
+
 ```
 
 ---
