@@ -71,6 +71,7 @@ POSTGRES_DB=<your_database_name>
 
 Replace the placeholders with your actual PostgreSQL credentials.
 
+---
 
 ## 📂 Project Structure
 
