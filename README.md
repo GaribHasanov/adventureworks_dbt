@@ -43,16 +43,16 @@ The project follows a modern ELT workflow:
 
 ## 📂 Project Structure
 
-
-
+```
 models/
 ├── staging/
 │   ├── stg_customers.sql
 │   ├── stg_orders.sql
-││
+│
 ├── marts/
 │   ├── dim_customers.sql
 │   ├── dim_products.sql
 │   ├── fact_sales.sql
 │
 └── schema.yml
+```
