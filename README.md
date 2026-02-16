@@ -53,6 +53,25 @@ dbt Mart Models (`adventureworks` schema)
 
 ---
 
+## ⚙️ Environment Configuration
+
+The Python scripts use a `.env` file to load PostgreSQL connection details (host, port, username, password, database).  
+
+**Important:** The `.env` file is **gitignored** for security reasons and is **not included in the repository**.  
+
+To run the scripts, create a `.env` file in the same folder as the scripts with the following variables:
+
+```env
+POSTGRES_HOST=<your_postgres_host>
+POSTGRES_PORT=<your_postgres_port>
+POSTGRES_USER=<your_username>
+POSTGRES_PASSWORD=<your_password>
+POSTGRES_DB=<your_database_name>
+```
+
+Replace the placeholders with your actual PostgreSQL credentials.
+
+
 ## 📂 Project Structure
 
 ```
